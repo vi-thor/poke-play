@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		693EED172A60757B007ECED0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EED162A60757B007ECED0 /* main.swift */; };
+		693EED1F2A607BC9007ECED0 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EED1E2A607BC9007ECED0 /* Menu.swift */; };
+		693EED222A609582007ECED0 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EED212A609582007ECED0 /* Pokemon.swift */; };
+		693EED252A6095F6007ECED0 /* PokemonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EED242A6095F6007ECED0 /* PokemonRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		693EED132A60757B007ECED0 /* poke-play */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "poke-play"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693EED162A60757B007ECED0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		693EED1E2A607BC9007ECED0 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		693EED212A609582007ECED0 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		693EED242A6095F6007ECED0 /* PokemonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,9 @@
 		693EED0A2A60757B007ECED0 = {
 			isa = PBXGroup;
 			children = (
+				693EED232A6095E2007ECED0 /* Repository */,
+				693EED202A609574007ECED0 /* Entities */,
+				693EED1D2A607B7F007ECED0 /* Utils */,
 				693EED152A60757B007ECED0 /* poke-play */,
 				693EED142A60757B007ECED0 /* Products */,
 			);
@@ -60,6 +69,30 @@
 				693EED162A60757B007ECED0 /* main.swift */,
 			);
 			path = "poke-play";
+			sourceTree = "<group>";
+		};
+		693EED1D2A607B7F007ECED0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				693EED1E2A607BC9007ECED0 /* Menu.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		693EED202A609574007ECED0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				693EED212A609582007ECED0 /* Pokemon.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		693EED232A6095E2007ECED0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				693EED242A6095F6007ECED0 /* PokemonRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693EED1F2A607BC9007ECED0 /* Menu.swift in Sources */,
 				693EED172A60757B007ECED0 /* main.swift in Sources */,
+				693EED222A609582007ECED0 /* Pokemon.swift in Sources */,
+				693EED252A6095F6007ECED0 /* PokemonRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,3 +20,7 @@ todos
     6.3 create finish
  */
 
+var menu = Utils()
+
+menu.drawHomeMenu()
+
