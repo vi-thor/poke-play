@@ -53,7 +53,7 @@ class Utils {
     
     func drawPokemonCreation() {
         let pokemonRepository = PokemonRepository()
-        var input: String = ""
+        var input: String = " "
         print("|----------MENU----------|")
         print("| 1 - All Pokemons       |")
         print("| 2 - Create new Pokemon |")

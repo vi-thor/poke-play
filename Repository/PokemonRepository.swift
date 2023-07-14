@@ -16,11 +16,9 @@ class PokemonRepository {
         self.standardPokemons();
     }
     
-    
     func GetAllPokemons() -> [Pokemon]{
         return self.pokemonList;
     }
-    
     
     func addPokemon(pokemon: Pokemon){
         self.pokemonList.append(pokemon)

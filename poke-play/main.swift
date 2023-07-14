@@ -12,7 +12,7 @@ todos
  1 create entity pokemon
  2 create menu for navigation
  3 create
- 4 mock 3 pokemons default
+ 4 mock 3 pokemons default (done)
  5 create own pokemon
  6 fight
     6.1 choose user pokemon

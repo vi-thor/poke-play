@@ -22,5 +22,4 @@ class Pokemon {
         self.Armour = Armour
         self.Damage = Damage
     }
-    
 }
