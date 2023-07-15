@@ -10,9 +10,14 @@ import Foundation
 /**
 todos
  1 create entity pokemon (done)
- 2 create menu for navigation (done
+ 2 create entity player  (done)
+ 2 create menu for navigation (done)
  4 mock 4 pokemons default (done)
- 5 create own pokemon
+ 5 pokemon
+    5.1 - create own pokemon
+    5.2 - details pokemon (done)
+    5.3 - see all pokemons (done)
+ 
  6 fight
     6.1 choose user pokemon
     6.2 choose enemy pokemon
