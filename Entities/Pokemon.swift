@@ -9,17 +9,19 @@ import Foundation
 
 
 class Pokemon {
-    var Id: Int
+    var Id: UUID
     var Name: String
     var Health: Int
     var Armour: Int
     var Damage: Int
+    var Nature: String
     
-    init(Id: Int, Name: String, Health: Int, Armour: Int, Damage: Int) {
+    init(Id: UUID = UUID(), Name: String, Health: Int, Armour: Int, Damage: Int, Nature: String) {
         self.Id = Id
         self.Name = Name
         self.Health = Health
         self.Armour = Armour
         self.Damage = Damage
+        self.Nature = Nature
     }
 }

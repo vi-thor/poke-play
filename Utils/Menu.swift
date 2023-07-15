@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class Utils {
     func drawHomeMenu() {
         
@@ -17,7 +18,7 @@ class Utils {
             print("| 1 - Play               |")
             print("| 2 - Pokemons           |")
             print("| 3 - Exit               |")
-            print("| Selecione uma Opção:", terminator: "")
+            print("| Selecione uma Opção:", terminator: "\n")
             
             input = readLine()!
             while(input == "") {
@@ -42,10 +43,15 @@ class Utils {
             case "2":
                     drawPokemonCreation()
                 break
+        case "3":
+            exit(0)
+            break
             default:
+            
                 break
         }
-    }
+        
+     }
 
     func drawPlayMenu() {
         print("Going to play")
@@ -56,8 +62,9 @@ class Utils {
         var input: String = " "
         print("|----------MENU----------|")
         print("| 1 - All Pokemons       |")
-        print("| 2 - Create new Pokemon |")
-        print("| 3 - Exit               |")
+        print("| 2 - Detail Pokemon     |")
+        print("| 3 - Create new Pokemon |")
+        print("| 4 - Back               |")
         print("| Selecione uma Opção:", terminator: "")
         
         input = readLine()!
@@ -68,15 +75,22 @@ class Utils {
         
         switch(input){
         case "1":
-            let pokemonList = pokemonRepository.GetAllPokemons()
-            pokemonList.forEach{ pokemon in
-                print("Name: \(pokemon.Name)\nHealth: \(pokemon.Health)\nDamage:\(pokemon.Damage)\nArmour:\(pokemon.Armour)", terminator: "\n\n")
-                
-            }
+            pokemonRepository.showAllPokemons()
+            print("\n\n\n")
+            drawPokemonCreation()
             break
         case "2":
+            pokemonRepository.showPokemonDetails()
+            print("\n\n\n")
+            drawPokemonCreation()
+            break
+        case "4":
+            drawHomeMenu()
+            Console.Clear()
             break
         default:
+            print("Nenhuma opção foi selecionada, tente novamente")
+            drawPokemonCreation()
             break
         }
     }
