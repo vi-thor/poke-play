@@ -89,6 +89,7 @@ class Utils {
             break
         case "2":
             playerRepository.showPokedex(player: player)
+            drawPlayMenu()
             break
         case "3":
             drawHomeMenu()
