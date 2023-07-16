@@ -9,13 +9,15 @@ import Foundation
 
 
 class Utils {
+    let player = Player( Name: "", pokedex: [])
+    
     func drawHomeMenu() {
         
         var input:String
         repeat {
             
             print("|----------MENU----------|")
-            print("| 1 - Play               |")
+            print("| 1 - Start Game         |")
             print("| 2 - Pokemons           |")
             print("| 3 - Exit               |")
             print("| Selecione uma Opção:", terminator: "\n")
@@ -28,8 +30,6 @@ class Utils {
             
             selectMenuOptions(input: input)
             
-            
-                       
         }while(input == "Exit")
 
     }
@@ -54,7 +54,48 @@ class Utils {
      }
 
     func drawPlayMenu() {
-        print("Going to play")
+        
+        let playerRepository = PlayerRepository()
+        
+        if(self.player.Name == "") {
+            print("WELCOME TO POKEPLAY\n")
+            print("Enter your username")
+            let username = readLine()!
+            
+            self.player.Name = username
+        }
+      
+        
+        if(player.pokedex.isEmpty) {
+            playerRepository.choosePokemon(player: player)
+        }
+        
+        var input: String = " "
+        print("|----------MENU----------|")
+        print("| 1 - Start Fight        |")
+        print("| 2 - Pokedex            |")
+        print("| 3 - Back               |")
+        print("| Selecione uma Opção:", terminator: "")
+       
+        input = readLine()!
+        while(input == "") {
+            print("While the option is empty, it is not possible to move forwards. Please pick an option")
+            input = readLine()!
+        }
+        
+        switch(input) {
+        case "1":
+            //todo add fight here
+            break
+        case "2":
+            playerRepository.showPokedex(player: player)
+            break
+        case "3":
+            drawHomeMenu()
+            break
+        default:
+            break
+        }
     }
     
     func drawPokemonCreation() {
@@ -65,11 +106,11 @@ class Utils {
         print("| 2 - Detail Pokemon     |")
         print("| 3 - Create new Pokemon |")
         print("| 4 - Back               |")
-        print("| Selecione uma Opção:", terminator: "")
+        print("| Choose an option", terminator: "")
         
         input = readLine()!
         while(input == "") {
-            print("Não é possível prosseguir sem escolher uma opção\npor favor tente novamente.")
+            print("While the option is empty, it is not possible to move forwards. Please pick an option")
             input = readLine()!
         }
         
@@ -89,7 +130,7 @@ class Utils {
             Console.Clear()
             break
         default:
-            print("Nenhuma opção foi selecionada, tente novamente")
+            print("No options was selected, please try again.")
             drawPokemonCreation()
             break
         }
