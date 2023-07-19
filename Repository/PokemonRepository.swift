@@ -27,8 +27,7 @@ class PokemonRepository {
     func getPokemon(name: String) -> Pokemon{
         if(!name.isEmpty) {
             
-            let pokemon = pokemonList.first(where: { $0.Name == name })
-            return pokemon!
+            return pokemonList.first(where: { $0.Name.lowercased() == name || $0.Name.uppercased() == name})!
         } else {
             return Pokemon(Name: "undefined", Health: 0, Armour: 0, Damage: 0, Nature: "not defined")
         }

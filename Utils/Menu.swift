@@ -23,7 +23,7 @@ class Utils {
             print("| Selecione uma Opção:", terminator: "\n")
             
             input = readLine()!
-            while(input == "") {
+            while(input == "" || input.isEmpty) {
                 print("Não é possível prosseguir sem escolher uma opção\npor favor tente novamente.")
                 input = readLine()!
             }
@@ -78,7 +78,7 @@ class Utils {
         print("| Selecione uma Opção:", terminator: "")
        
         input = readLine()!
-        while(input == "") {
+        while(input == "" || input.isEmpty) {
             print("While the option is empty, it is not possible to move forwards. Please pick an option")
             input = readLine()!
         }
@@ -89,7 +89,7 @@ class Utils {
             break
         case "2":
             playerRepository.showPokedex(player: player)
-            drawPlayMenu()
+            drawPokemonCreation()
             break
         case "3":
             drawHomeMenu()
@@ -110,7 +110,7 @@ class Utils {
         print("| Choose an option", terminator: "")
         
         input = readLine()!
-        while(input == "") {
+        while(input == "" || input.isEmpty || input.starts(with: " ")) {
             print("While the option is empty, it is not possible to move forwards. Please pick an option")
             input = readLine()!
         }
@@ -136,6 +136,8 @@ class Utils {
             break
         }
     }
+    
+    
 
     
 }
