@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Pokemon {
+class Pokemon: Codable {
     var Id: UUID
     
     var Name: String

@@ -24,7 +24,8 @@ todos
     6.3 create finish
  */
 
-var menu = Utils()
+print("test")
+let menu = Utils()
 
 menu.drawHomeMenu()
-
+//menu.drawPlayMenu()

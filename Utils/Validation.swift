@@ -30,4 +30,9 @@ class Validation {
     public func isText(input:String) -> Bool {
         return input.contains(/[a-zA-Z]/)
     }
+    
+    public func isValidNature(input:String) -> Bool {
+        let nature = Array<String>(arrayLiteral: "GRASS", "FIRE", "WATER", "ELECTRIC")        
+        return nature.contains(input.uppercased())
+    }
 }

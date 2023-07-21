@@ -10,10 +10,10 @@ import Foundation
 
 class PokemonRepository {
     
-    private var pokemonList: [Pokemon] = []
+    internal var pokemonList: [Pokemon] = []
     
     init(){
-        self.standardPokemons();
+        standardPokemons();
     }
     
     func GetAllPokemons() -> [Pokemon]{
@@ -21,11 +21,11 @@ class PokemonRepository {
     }
     
     func addPokemon(pokemon: Pokemon){
-        self.pokemonList.append(pokemon)
+        pokemonList.append(pokemon)
     }
     
     func getPokemon(name: String) -> Pokemon{
-        if(!name.isEmpty) {
+        if(!name.isEmpty && pokemonList.contains(where: { $0.Name.lowercased() == name.lowercased()})) {
             
             return pokemonList.first(where: { $0.Name.lowercased() == name || $0.Name.uppercased() == name})!
         } else {
@@ -52,34 +52,89 @@ class PokemonRepository {
     }
     
     func showAllPokemons() {
-        
+        print("\n|-------------------------|\n")
         self.pokemonList.forEach{ pokemon in
             printPokemon(pokemon: pokemon)
         }
     }
     
+    func showAllPokemonNames() {
+        print("\n|---------------------------|\n")
+        self.pokemonList.forEach{ pokemon in
+            print("Name: \(pokemon.Name)")
+        }
+        print("\n|---------------------------|\n")
+    }
+    
     func printPokemon(pokemon: Pokemon){
-      
-         print("Name: \(pokemon.Name) - [ \(pokemon.Nature) ] \n" +
-        "Health: \(pokemon.Health) \n" +
-        "Damage: \(pokemon.Damage) \n" +
-        "Armour \(pokemon.Armour)")
-        print("\n\n|-------------------------|\n")
+        print("Name: \(pokemon.Name) - [ \(pokemon.Nature) ] \n" +
+              "Health: \(pokemon.Health) \n" +
+              "Damage: \(pokemon.Damage) \n" +
+              "Armour \(pokemon.Armour)")
+        print("\n|-------------------------|\n")
     }
     
     func showPokemonDetails() {
+        showAllPokemonNames()
         
-        showAllPokemons()
+        print("Please select a Pokemon by the name to see more details: ")
         
-        print("\n\n")
-        print("Selecione um Pokemon pelo nome para ver mais detalhes")
-        
-        let input: String = readLine()!
+        var input: String = readLine()!
         while(input.isEmpty) {
-            print("Por favor, selecione um pokemon pelo nome")
+            print("Please select a Pokemon by the correct name: ")
+            input = readLine()!
         }
         
-        print("Pokemon Selecionado foi:")
+        print("\nSelected Pokemon: ")
+        print("\n|-------------------------|\n")
         printPokemon(pokemon: getPokemon(name: input))
+    }
+    
+    func newPokemon(){
+        let validation = Validation()
+        
+        print("\n|  ...CREATING POKEMON...  |")
+        
+        print("\nInsert name: ")
+        var name: String = readLine()!
+        while(!validation.isText(input: name) || validation.isNil(input: name)) {
+            print("\nPlease insert a valid name: ")
+            name = readLine()!
+        }
+        
+        print("\nInsert damage: ")
+        var damage: String = readLine()!
+        while(!validation.isNumber(input: damage)) {
+            print("\nPlease insert a valid damage value number: ")
+            damage = readLine()!
+        }
+        
+        print("\nInsert armour: ")
+        var armour: String = readLine()!
+        while(!validation.isNumber(input: armour)) {
+            print("\nPlease insert a valid armour value number: ")
+            armour = readLine()!
+        }
+        
+        print("\nInsert health: ")
+        var health: String = readLine()!
+        while(!validation.isNumber(input: health)) {
+            print("\nPlease insert a valid health value number: ")
+            health = readLine()!
+        }
+        
+        print("\nInsert nature: ")
+        var nature: String = readLine()!
+        while(!validation.isValidNature(input: nature)) {
+            print("\nPlease insert a valid nature (grass, fire, water, electric): ")
+            nature = readLine()!
+        }
+        
+        let newPokemon = Pokemon(Name: name, Health: Int(health)!, Armour: Int(armour)!, Damage: Int(damage)!, Nature: nature.uppercased())
+        //addPokemon(pokemon: newPokemon)
+        
+        self.pokemonList.append(newPokemon)
+        print("\n|-------------------------|\n")
+        printPokemon(pokemon: getPokemon(name: name))
     }
 }

@@ -15,6 +15,7 @@
 		693EED2A2A62C93C007ECED0 /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EED292A62C93C007ECED0 /* Console.swift */; };
 		693EED2C2A6445C9007ECED0 /* PlayerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EED2B2A6445C9007ECED0 /* PlayerRepository.swift */; };
 		693EED2E2A6874ED007ECED0 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EED2D2A6874ED007ECED0 /* Validation.swift */; };
+		693EED322A698C23007ECED0 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693EED312A698C23007ECED0 /* LocalStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		693EED292A62C93C007ECED0 /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 		693EED2B2A6445C9007ECED0 /* PlayerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRepository.swift; sourceTree = "<group>"; };
 		693EED2D2A6874ED007ECED0 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		693EED312A698C23007ECED0 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				693EED1E2A607BC9007ECED0 /* Menu.swift */,
 				693EED292A62C93C007ECED0 /* Console.swift */,
 				693EED2D2A6874ED007ECED0 /* Validation.swift */,
+				693EED312A698C23007ECED0 /* LocalStorage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				693EED322A698C23007ECED0 /* LocalStorage.swift in Sources */,
 				693EED1F2A607BC9007ECED0 /* Menu.swift in Sources */,
 				693EED2A2A62C93C007ECED0 /* Console.swift in Sources */,
 				693EED172A60757B007ECED0 /* main.swift in Sources */,
