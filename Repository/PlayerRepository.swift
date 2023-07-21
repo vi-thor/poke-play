@@ -9,12 +9,11 @@ import Foundation
 
 
 class PlayerRepository {
-    let pokemonRepository = PokemonRepository()
     let validation = Validation()
-    func choosePokemon(player: Player)-> Void {
+    func choosePokemon(player: Player, pokemonRepository: PokemonRepository)-> Void {
         
         print("Your pokedex is empty, please choose one pokemon!")
-        self.pokemonRepository.showAllPokemons()
+        pokemonRepository.showAllPokemons()
         
         print("Write the name of the pokemon that you want to pick!")
         var pokemonName: String = readLine()!
@@ -34,15 +33,15 @@ class PlayerRepository {
             pokemonName = readLine()!
         }
         
-        let pokemon = self.pokemonRepository.getPokemon(name: pokemonName)
+        let pokemon = pokemonRepository.getPokemon(name: pokemonName)
         player.pokedex.append(pokemon) //add to array
     }
     
-    func showPokedex(player: Player) {
+    func showPokedex(player: Player, pokemonRepository: PokemonRepository) {
         print("\n\n\n\n")
         print("|------- POKEDEX - [\(player.Name)] -------|")
         player.pokedex.forEach { pokemon in
-            self.pokemonRepository.printPokemon(pokemon: pokemon)
+            pokemonRepository.printPokemon(pokemon: pokemon)
         }
     }
 
